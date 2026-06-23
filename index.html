@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kedai Sembako Adels</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased font-sans">
+
+    <header class="sticky top-0 z-50 bg-white border-b border-slate-100 shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-green-600 rounded-xl flex items-center justify-center text-white text-xl shadow-md shadow-green-200">
+                    <i class="fa-solid fa-shop"></i>
+                </div>
+                <span class="text-xl font-bold text-slate-900 tracking-tight">Kedai Sembako <span class="text-green-600">Adels</span></span>
+            </div>
+            <nav class="hidden md:flex items-center gap-8 font-medium text-slate-600">
+                <a href="#beranda" class="hover:text-green-600 transition-colors">Beranda</a>
+                <a href="#produk" class="hover:text-green-600 transition-colors">Produk</a>
+                <a href="#tentang" class="hover:text-green-600 transition-colors">Tentang Kami</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <a href="#keranjang-section" class="relative p-2 text-slate-600 hover:text-green-600 transition-colors">
+                    <i class="fa-solid fa-basket-shopping text-2xl"></i>
+                    <span id="badge-keranjang" class="absolute -top-1 -right-1 bg-green-600 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center scale-0 transition-transform">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="beranda" class="bg-gradient-to-br from-green-50 via-white to-white py-16 sm:py-24 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-green-100 text-green-800 mb-6">
+                    <i class="fa-solid fa-star text-[10px]"></i> Sembako Segar & Murah tiap Hari
+                </span>
+                <h1 class="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight mb-6">
+                    Penuhi Kebutuhan Dapur <br class="hidden sm:block"> Tanpa Perlu <span class="text-green-600 underline decoration-wavy decoration-green-300">Repot Keluar Rumah</span>
+                </h1>
+                <p class="text-lg text-slate-600 mb-8 max-w-xl">
+                    Menyediakan berbagai kebutuhan pokok harian dengan harga yang ramah di kantong, tetapi dengan  kualitas unggulan.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#produk" class="px-6 py-3.5 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-xl shadow-lg shadow-green-200 transition-all hover:-translate-y-0.5">
+                        Mulai Belanja <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="relative flex justify-center">
+                <div class="absolute inset-0 bg-green-200/40 rounded-full blur-3xl -z-10 transform scale-75"></div>
+                <img src="https://i.pinimg.com/originals/ac/ec/67/acec678e1598f5cc9eaaa36211085471.png" alt="Sembako" class="rounded-3xl shadow-2xl border-4 border-white transform md:rotate-2 max-w-full h-auto object-cover max-h-[380px]">
+            </div>
+        </div>
+    </section>
+
+    <main id="produk" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="text-3xl font-bold text-slate-900 tracking-tight mb-3">Produk Unggulan Kami</h2>
+            <p class="text-slate-600">Dipilih langsung dari produsen terbaik demi menjamin mutu dan kesegaran bahan pokok konsumsi keluarga Anda.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white rounded-2xl border border-slate-100 p-4 shadow-xs hover:shadow-xl hover:border-green-100 transition-all flex flex-col justify-between group">
+                <div>
+                    <div class="relative overflow-hidden rounded-xl bg-slate-100 mb-4 h-48">
+                        <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&q=80&w=400" alt="Beras Premium" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-1">Beras Premium 5kg</h3>
+                    <p class="text-xs text-slate-500 mb-3"><i class="fa-solid fa-circle-check text-green-500 mr-1"></i> Stok Tersedia</p>
+                </div>
+                <div>
+                    <p class="text-xl font-black text-green-600 mb-4">Rp 75.000</p>
+                    <button onclick="tambahKeKeranjang('Beras Premium 5kg', 75000)" class="w-full py-3 bg-green-50 hover:bg-green-600 text-green-700 hover:text-white font-semibold rounded-xl transition-colors flex items-center justify-center gap-2 cursor-pointer">
+                        <i class="fa-solid fa-plus text-xs"></i> Keranjang
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-100 p-4 shadow-xs hover:shadow-xl hover:border-green-100 transition-all flex flex-col justify-between group">
+                <div>
+                    <div class="relative overflow-hidden rounded-xl bg-slate-100 mb-4 h-48">
+                        <img src="https://cf.shopee.co.id/file/sg-11134201-22100-or46l4oajuive4" alt="Minyak Goreng" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-1">Minyak Goreng 1000ML</h3>
+                    <p class="text-xs text-slate-500 mb-3"><i class="fa-solid fa-circle-check text-green-500 mr-1"></i> Stok Tersedia</p>
+                </div>
+                <div>
+                    <p class="text-xl font-black text-green-600 mb-4">Rp 25.000</p>
+                    <button onclick="tambahKeKeranjang('Minyak Goreng 1L', 25000)" class="w-full py-3 bg-green-50 hover:bg-green-600 text-green-700 hover:text-white font-semibold rounded-xl transition-colors flex items-center justify-center gap-2 cursor-pointer">
+                        <i class="fa-solid fa-plus text-xs"></i> Keranjang
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-100 p-4 shadow-xs hover:shadow-xl hover:border-green-100 transition-all flex flex-col justify-between group">
+                <div>
+                    <div class="relative overflow-hidden rounded-xl bg-slate-100 mb-4 h-48">
+                        <img src="https://allofresh.id/blog/wp-content/uploads/2023/11/merk-gula-pasir-1.jpg" alt="Gula Pasir" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-1">Gula Pasir 1kg</h3>
+                    <p class="text-xs text-slate-500 mb-3"><i class="fa-solid fa-circle-check text-green-500 mr-1"></i> Stok Tersedia</p>
+                </div>
+                <div>
+                    <p class="text-xl font-black text-green-600 mb-4">Rp 16.000</p>
+                    <button onclick="tambahKeKeranjang('Gula Pasir 1kg', 16000)" class="w-full py-3 bg-green-50 hover:bg-green-600 text-green-700 hover:text-white font-semibold rounded-xl transition-colors flex items-center justify-center gap-2 cursor-pointer">
+                        <i class="fa-solid fa-plus text-xs"></i> Keranjang
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-100 p-4 shadow-xs hover:shadow-xl hover:border-green-100 transition-all flex flex-col justify-between group">
+                <div>
+                    <div class="relative overflow-hidden rounded-xl bg-slate-100 mb-4 h-48">
+                        <img src="https://img.freepik.com/premium-photo/organic-eggs-top-each-other_722820-75.jpg" alt="Telur Ayam" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-1">Telur Ayam 1kg</h3>
+                    <p class="text-xs text-slate-500 mb-3"><i class="fa-solid fa-circle-check text-green-500 mr-1"></i> Stok Tersedia</p>
+                </div>
+                <div>
+                    <p class="text-xl font-black text-green-600 mb-4">Rp 28.000</p>
+                    <button onclick="tambahKeKeranjang('Telur Ayam 1kg', 28000)" class="w-full py-3 bg-green-50 hover:bg-green-600 text-green-700 hover:text-white font-semibold rounded-xl transition-colors flex items-center justify-center gap-2 cursor-pointer">
+                        <i class="fa-solid fa-plus text-xs"></i> Keranjang
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-100 p-4 shadow-xs hover:shadow-xl hover:border-green-100 transition-all flex flex-col justify-between group">
+                <div>
+                    <div class="relative overflow-hidden rounded-xl bg-slate-100 mb-4 h-48">
+                        <img src="https://down-id.img.susercontent.com/file/id-11134207-7rasb-m42uva0a4ozu4c" alt="Beras Premium" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-1">Mie Instan Indomie Goreng 1Box</h3>
+                    <p class="text-xs text-slate-500 mb-3"><i class="fa-solid fa-circle-check text-green-500 mr-1"></i> Stok Tersedia</p>
+                </div>
+                <div>
+                    <p class="text-xl font-black text-green-600 mb-4">Rp 115.000</p>
+                    <button onclick="tambahKeKeranjang('Mie Instan Indomie Goreng 1Box', 115000)" class="w-full py-3 bg-green-50 hover:bg-green-600 text-green-700 hover:text-white font-semibold rounded-xl transition-colors flex items-center justify-center gap-2 cursor-pointer">
+                        <i class="fa-solid fa-plus text-xs"></i> Keranjang
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-100 p-4 shadow-xs hover:shadow-xl hover:border-green-100 transition-all flex flex-col justify-between group">
+                <div>
+                    <div class="relative overflow-hidden rounded-xl bg-slate-100 mb-4 h-48">
+                        <img src="https://images.tokopedia.net/img/cache/500-square/product-1/2020/5/17/28642369/28642369_0c52a9ea-7217-4a69-a54b-8bb28ed953f8_939_939?ect=4g" alt="Minyak Goreng" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-1">Sarden King's Fisher 1Pcs</h3>
+                    <p class="text-xs text-slate-500 mb-3"><i class="fa-solid fa-circle-check text-green-500 mr-1"></i> Stok Tersedia</p>
+                </div>
+                <div>
+                    <p class="text-xl font-black text-green-600 mb-4">Rp 18.000</p>
+                    <button onclick="tambahKeKeranjang('Sarden Kings Fisher', 18000)" class="w-full py-3 bg-green-50 hover:bg-green-600 text-green-700 hover:text-white font-semibold rounded-xl transition-colors flex items-center justify-center gap-2 cursor-pointer">
+                        <i class="fa-solid fa-plus text-xs"></i> Keranjang
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-100 p-4 shadow-xs hover:shadow-xl hover:border-green-100 transition-all flex flex-col justify-between group">
+                <div>
+                    <div class="relative overflow-hidden rounded-xl bg-slate-100 mb-4 h-48">
+                        <img src="https://www.gosupps.com/media/catalog/product/6/1/61xGBT9MquL.jpg" alt="Gula Pasir" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-1">Kecap Bangao 620Ml</h3>
+                    <p class="text-xs text-slate-500 mb-3"><i class="fa-solid fa-circle-check text-green-500 mr-1"></i> Stok Tersedia</p>
+                </div>
+                <div>
+                    <p class="text-xl font-black text-green-600 mb-4">Rp 70.000</p>
+                    <button onclick="tambahKeKeranjang('Kecap Bangao 620Ml', 70000)" class="w-full py-3 bg-green-50 hover:bg-green-600 text-green-700 hover:text-white font-semibold rounded-xl transition-colors flex items-center justify-center gap-2 cursor-pointer">
+                        <i class="fa-solid fa-plus text-xs"></i> Keranjang
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-100 p-4 shadow-xs hover:shadow-xl hover:border-green-100 transition-all flex flex-col justify-between group">
+                <div>
+                    <div class="relative overflow-hidden rounded-xl bg-slate-100 mb-4 h-48">
+                        <img src="https://down-my.img.susercontent.com/file/id-11134207-7rasi-m15gt9luxj2r67" alt="Telur Ayam" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-1">Saos Sambal Indofood Aneka Rasa 135Ml</h3>
+                    <p class="text-xs text-slate-500 mb-3"><i class="fa-solid fa-circle-check text-green-500 mr-1"></i> Stok Tersedia</p>
+                </div>
+                <div>
+                    <p class="text-xl font-black text-green-600 mb-4">Rp 14.000</p>
+                    <button onclick="tambahKeKeranjang('Saos Sambal Indofood Aneka Rasa 135Ml', 14000)" class="w-full py-3 bg-green-50 hover:bg-green-600 text-green-700 hover:text-white font-semibold rounded-xl transition-colors flex items-center justify-center gap-2 cursor-pointer">
+                        <i class="fa-solid fa-plus text-xs"></i> Keranjang
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <section id="keranjang-section" class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mb-16">
+        <div class="bg-white border border-slate-100 rounded-2xl shadow-xl overflow-hidden">
+            <div class="bg-green-600 px-6 py-4 flex items-center justify-between text-white">
+                <h3 class="font-bold text-lg flex items-center gap-2"><i class="fa-solid fa-basket-shopping"></i> Ringkasan Belanja Anda</h3>
+                <button onclick="kosongkanKeranjang()" class="text-xs font-semibold bg-green-700/50 hover:bg-green-700 px-2.5 py-1.5 rounded-lg border border-green-500/30 transition-colors cursor-pointer">Kosongkan</button>
+            </div>
+            
+            <ul id="daftar-keranjang" class="divide-y divide-slate-100 px-6 py-4 max-h-60 overflow-y-auto">
+                <li id="keranjang-kosong-msg" class="text-center py-8 text-slate-400 italic">
+                    <i class="fa-solid fa-face-frown text-2xl mb-2 block text-slate-300"></i> Keranjang belanja masih kosong
+                </li>
+            </ul>
+
+            <div class="bg-slate-50/50 px-6 py-5 border-t border-slate-100">
+                <div class="flex items-center justify-between text-slate-900 font-bold text-lg mb-4">
+                    <span>Total Estimasi:</span>
+                    <span class="text-2xl font-black text-green-600">Rp <span id="total-harga">0</span></span>
+                </div>
+                <button onclick="checkoutWhatsApp()" class="w-full py-4 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-center rounded-xl shadow-lg shadow-emerald-100 transition-all hover:-translate-y-0.5 flex items-center justify-center gap-3 text-lg cursor-pointer">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i> Kirim Pesanan via WhatsApp
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <footer id="tentang" class="bg-slate-900 text-slate-400 border-t border-slate-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="font-bold text-white text-lg mb-4">Kedai Sembako Adels</div>
+            <p class="text-sm max-w-md mx-auto mb-6">Menyediakan layanan belanja online kebutuhan pokok masyarakat sekitar secara instan, aman, dan amanah.</p>
+            <div class="text-xs text-slate-600">&copy; 2026 Kedai Sembako Adels. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script src="toko.js"></script>
+</body>
+</html>
